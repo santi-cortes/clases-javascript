@@ -7,22 +7,89 @@
   </head>
   <body>
     <h1>Hola mundo!</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat corrupti
-      reiciendis numquam tenetur, beatae quis aut voluptas sit dolorum
-      dignissimos doloremque cum dolore officiis nesciunt porro ducimus quos
-      fugiat reprehenderit?
-    </p>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat corrupti
-      reiciendis numquam tenetur, beatae quis aut voluptas sit dolorum
-      dignissimos doloremque cum dolore officiis nesciunt porro ducimus quos
-      fugiat reprehenderit?
-      <span id="numero">1</span>
-      <script>
-        const numero = document.getElementById("numero");
-        numero.innerText = 2;
-      </script>
-    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div>
+        <label>Usuario</label>
+        <input
+          type="text"
+          placeholder="Introduce tu usuario..."
+          onchange="manejarUsuario(event)"
+        />
+      </div>
+      <div>
+        <label>Contrasena</label>
+        <input
+          id="contrasena"
+          type="password"
+          placeholder="Introduce tu password..."
+          onchange="manejarContrasena(event)"
+        />
+        <button
+          onclick="manejarClick()"
+          style="height: fit-content; width: fit-content"
+        >
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <button onclick="manejarLogin()">Login</button>
+    </div>
+    <script>
+      const usuario = {
+        nombre: "",
+        contrasena: "",
+      };
+
+      let contrasenaElemento = document.getElementById("contrasena");
+      let mostrarContrasena = false;
+
+      function manejarUsuario(event) {
+        console.log(event.target.value);
+        usuario.nombre = event.target.value;
+      }
+
+      function manejarContrasena(event) {
+        console.log(event.target.value);
+        usuario.contrasena = event.target.value;
+      }
+
+      function manejarLogin() {
+        console.log(usuario);
+      }
+
+      function manejarClick() {
+        mostrarContrasena = !mostrarContrasena;
+        if (mostrarContrasena) {
+          contrasenaElemento.setAttribute("type", "text");
+        } else {
+          contrasenaElemento.setAttribute("type", "password");
+        }
+      }
+
+      // Tareas
+      // 1. Cambiar el logo del ojo en el input de password dependiendo si esta visible o no
+      // 2. Agregar un mensaje de bienvenido cuando se clickea el boton de login
+      // 3. Dar estilos css al formulario
+    </script>
   </body>
 </html>
