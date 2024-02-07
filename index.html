@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" src="style.css" type="text/css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Hola mundo!</h1>
+    <h1>Login</h1>
     <div style="display: flex; flex-direction: column; gap: 12px">
       <div>
         <label>Usuario</label>
@@ -52,6 +53,7 @@
           </svg>
         </button>
       </div>
+      <div id="mensajeBienvenida"></div>
       <button onclick="manejarLogin()">Login</button>
     </div>
     <script>
@@ -73,7 +75,13 @@
         usuario.contrasena = event.target.value;
       }
 
+      //function manejarLogin() {
+      //console.log(usuario);
+      //}
+
       function manejarLogin() {
+        let mensajeBienvenida = document.getElementById("mensajeBienvenida");
+        mensajeBienvenida.textContent = "¡Bienvenido, " + usuario.nombre + "!";
         console.log(usuario);
       }
 
