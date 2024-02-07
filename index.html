@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" src="style.css" type="text/css" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Login</h1>
+    <h1 class="title">Login</h1>
     <div style="display: flex; flex-direction: column; gap: 12px">
       <div>
         <label>Usuario</label>
@@ -26,6 +26,7 @@
           onchange="manejarContrasena(event)"
         />
         <button
+          title="mostrarContrasena"
           onclick="manejarClick()"
           style="height: fit-content; width: fit-content"
         >
@@ -34,6 +35,8 @@
             height="24px"
             viewBox="0 0 24 24"
             fill="none"
+            id="icon-open-eye"
+            style="display: block"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -51,12 +54,43 @@
               stroke-linejoin="round"
             />
           </svg>
+          <svg
+            width="24px"
+            height="24px"
+            id="icon-close-eye"
+            style="display: none"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.99902 3L20.999 21M9.8433 9.91364C9.32066 10.4536 8.99902 11.1892 8.99902 12C8.99902 13.6569 10.3422 15 11.999 15C12.8215 15 13.5667 14.669 14.1086 14.133M6.49902 6.64715C4.59972 7.90034 3.15305 9.78394 2.45703 12C3.73128 16.0571 7.52159 19 11.9992 19C13.9881 19 15.8414 18.4194 17.3988 17.4184M10.999 5.04939C11.328 5.01673 11.6617 5 11.9992 5C16.4769 5 20.2672 7.94291 21.5414 12C21.2607 12.894 20.8577 13.7338 20.3522 14.5"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
       </div>
       <div id="mensajeBienvenida"></div>
       <button onclick="manejarLogin()">Login</button>
     </div>
     <script>
+      const dataLogin = [
+        {
+          id: 1,
+          name: "John Doe",
+          email: "",
+          password: "a",
+        },
+        {
+          id: 2,
+          name: "Jane Doe",
+          email: "",
+        },
+      ];
+
       const usuario = {
         nombre: "",
         contrasena: "",
@@ -71,7 +105,6 @@
       }
 
       function manejarContrasena(event) {
-        console.log(event.target.value);
         usuario.contrasena = event.target.value;
       }
 
@@ -87,17 +120,31 @@
 
       function manejarClick() {
         mostrarContrasena = !mostrarContrasena;
+        const iconCloseEye = document.getElementById("icon-close-eye"); // Icono de ojo cerrado
+        const iconOpenEye = document.getElementById("icon-open-eye"); // Icono de ojo abierto
         if (mostrarContrasena) {
-          contrasenaElemento.setAttribute("type", "text");
+          // Si la contraseña esta visible
+          contrasenaElemento.setAttribute("type", "text"); // Muestra la contraseña en el input
+          iconCloseEye.style.display = "block"; // Muestra el icono de ojo cerrado
+          iconOpenEye.style.display = "none"; // Oculta el icono de ojo abierto
         } else {
-          contrasenaElemento.setAttribute("type", "password");
+          // Si la contraseña esta oculta
+          contrasenaElemento.setAttribute("type", "password"); // Oculta la contraseña
+          iconOpenEye.style.display = "block"; // Muestra el icono de ojo abierto
+          iconCloseEye.style.display = "none"; // Oculta el icono de ojo cerrado
         }
       }
 
       // Tareas
       // 1. Cambiar el logo del ojo en el input de password dependiendo si esta visible o no
-      // 2. Agregar un mensaje de bienvenido cuando se clickea el boton de login
+      // 2. Agregar un mensaje de bienvenido cuando se clickea el boton de login (Correcto)
       // 3. Dar estilos css al formulario
+
+      // Tareas 07/02/2024
+      // 1. Agregar Recapcha al formulario
+      // 2. Agregar un mensaje de error cuando el usuario o contraseña no son correctos
+      // 3. Agregar formulario de registro de usuario
+      // 4. Agregar estilos de Figma
     </script>
   </body>
 </html>

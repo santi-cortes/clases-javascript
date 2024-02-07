@@ -1,13 +1,13 @@
 @font-face {
   font-family: "JK Abode";
-  src: url("fonts/JKAbode-Demo.ttf") format("ttf");
+  src: url("./fonts/JKAbode-Demo.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: "IRANSans(FaNum)";
-  src: url("fonts/JKAbode-Demo.ttf") format("truetype");
+  src: url("./fonts/JKAbode-Demo.ttf") format("truetype");
   font-style: medium;
   font-weight: medium;
 }
@@ -21,6 +21,6 @@ body {
 }
 
 h1 {
-  font-family: JK Abode;
+  font-family: "JK Abode";
   color: red;
 }
