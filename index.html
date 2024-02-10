@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <title>Login</title>
   </head>
   <body>
@@ -81,10 +85,13 @@
             />
           </svg>
         </button>
-      
       <div id="mensajeBienvenida"></div>
-      <button onclick="manejarLogin()">login</button>
+      <button onclick="manejarLogin()" class="g-recaptcha"
+      data-sitekey="reCAPTCHA_site_key"
+      data-callback='onSubmit'
+      data-action='submit'>login</button>
     </div>
+    <a href="#" class="linkregister">Registrarse</a>
     <script>
       const dataLogin = [
         {
@@ -154,6 +161,19 @@
       // 2. Agregar un mensaje de error cuando el usuario o contraseña no son correctos
       // 3. Agregar formulario de registro de usuario
       // 4. Agregar estilos de Figma
+
+      function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+      }
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+        grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+        // Add your logic to submit to your backend server here.
+        });
+      });
+}
+</script>
     </script>
   </body>
 </html>

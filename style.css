@@ -73,6 +73,7 @@ img.imgellipse {
   }
 }
 
+/*Placeholders*/
 input[type="text"],
 input#contrasena {
   background: #27262c;
@@ -82,9 +83,22 @@ input#contrasena {
   font-size: 25px;
 }
 
+/*Button Login*/
 button {
   background: #4044ed;
   color: #fff !important;
   height: 5vh;
   border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+
+/*Link de registro*/
+a.linkregister {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Open Sans", sans-serif;
 }
