@@ -81,11 +81,21 @@ input#contrasena {
   border-bottom: 1px solid #fff !important;
   border-width: 0px 0px 1px 0px;
   font-size: 25px;
+  width: 100%;
 }
 
 button.eye {
   background-color: transparent;
   color: #fff;
+
+  position: absolute;
+  top: 58%;
+  right: 790px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  fill: #666; /* Adjust icon color */
 }
 
 /*Button Login*/
