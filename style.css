@@ -83,6 +83,11 @@ input#contrasena {
   font-size: 25px;
 }
 
+button.eye {
+  background-color: transparent;
+  color: #fff;
+}
+
 /*Button Login*/
 button {
   background: #4044ed;
