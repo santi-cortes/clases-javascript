@@ -4,32 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" type="text/css" />
-    <title>Document</title>
+    <title>Login</title>
   </head>
   <body>
-    <h1 class="title">Login</h1>
-    <div style="display: flex; flex-direction: column; gap: 12px">
-      <div>
-        <label>Usuario</label>
-        <input
-          type="text"
-          placeholder="Introduce tu usuario..."
-          onchange="manejarUsuario(event)"
-        />
-      </div>
-      <div>
-        <label>Contrasena</label>
-        <input
-          id="contrasena"
-          type="password"
-          placeholder="Introduce tu password..."
-          onchange="manejarContrasena(event)"
-        />
-        <button
-          title="mostrarContrasena"
-          onclick="manejarClick()"
-          style="height: fit-content; width: fit-content"
-        >
+    <div class="imgsback">
+      <img src="/img/Ellipse 1.png" class="imgcircle" alt="">
+      <img src="/img/Subtract.png" class="imgcircletop" alt="">
+      <img src="/img/Group 1.png" class="imgtrianglebottom" alt="">
+      <img src="/img/Ellipse 2.png" class="imgellipse" alt="">
+    </div>
+
+      <h1 class="title">Login</h1>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div>
+          <!--<label>Usuario</label>-->
+          <input
+            type="text"
+            placeholder="Username"
+            onchange="manejarUsuario(event)"
+          />
+        </div>
+        <div>
+          <!--<label>Contrasena</label>-->
+          <input
+            id="contrasena"
+            type="password"
+            placeholder="Password"
+            onchange="manejarContrasena(event)"
+          />
+          <button
+            class="eye"
+            title="mostrarContrasena"
+            onclick="manejarClick()"
+            style="height: fit-content; width: fit-content"
+          >
+      </div>    
           <svg
             width="24px"
             height="24px"
@@ -72,9 +81,9 @@
             />
           </svg>
         </button>
-      </div>
+      
       <div id="mensajeBienvenida"></div>
-      <button onclick="manejarLogin()">Login</button>
+      <button onclick="manejarLogin()">login</button>
     </div>
     <script>
       const dataLogin = [

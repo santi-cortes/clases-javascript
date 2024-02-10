@@ -12,15 +12,68 @@
   font-weight: medium;
 }
 
-button {
-  width: 7% !important;
+h1 {
+  font-family: "JK Abode";
+  color: #fff;
+  font-size: 90px;
+  letter-spacing: 5px;
 }
 
 body {
-  background: #cdcdcd;
+  height: 100vh; /* Esto establece que la altura sea del 100% del viewport */
+  background-color: #27262c; /* Cambia este color de fondo según tus preferencias */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*text-align: center;*/
 }
 
-h1 {
-  font-family: "JK Abode";
-  color: red;
+img.imgcircle {
+  height: 914px;
+  width: auto;
+  position: absolute;
+  left: 0px;
+  margin-top: auto;
+  top: 0px;
+  z-index: -999;
+}
+
+img.imgcircletop {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30%;
+  z-index: -999;
+}
+
+img.imgtrianglebottom {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 27%;
+}
+
+img.imgellipse {
+  position: absolute;
+  z-index: 999;
+  left: 185px;
+  top: 120px;
+  width: 4%;
+}
+
+input[type="text"],
+input#contrasena {
+  background: #27262c;
+  color: #fff !important;
+  border-bottom: 1px solid #fff !important;
+  border-width: 0px 0px 1px 0px;
+  font-size: 25px;
+}
+
+button {
+  background: #4044ed;
+  color: #fff !important;
+  height: 5vh;
+  border: none;
 }
